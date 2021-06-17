@@ -1,27 +1,19 @@
 
   var x = document.getElementById("demo");
-  var center = { lat: 49.227463, lng: -16.546097 };
   var input = document.getElementById("pac-input");
   var autocomplete;
 
-  // Create a bounding box with sides ~10km away from the center point
-  var defaultBounds = {
-      north: center.lat + 0.1,
-      south: center.lat - 0.1,
-      east: center.lng + 0.1,
-      west: center.lng - 0.1,
-    };
   
   var options = {
-    origin: center,
+    origin: undefined,
     strictBounds: false,
     types: ["establishment"],
   };
 
   // get user's location co-ordinate on page
-  // window.onload = function() {
-  //   getLocation()
-  // };
+  window.onload = function() {
+    getLocation()
+  };
 
   function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -39,6 +31,7 @@
 
   function showPosition(position) {
     options.origin = { lat:position.coords.latitude, lng:position.coords.longitude};
+    x.innerHTML = "got the geolocation, Please enter your query."
     reset()
   }
 

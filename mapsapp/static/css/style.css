@@ -1,0 +1,9 @@
+#pac-input{
+  width: 60%;
+  padding: 6px;
+  margin-top: 18px;
+  margin-left: 40px;
+  font-size: 17px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}

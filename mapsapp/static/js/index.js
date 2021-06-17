@@ -19,9 +19,9 @@
   };
 
   // get user's location co-ordinate on page
-  window.onload = function() {
-    getLocation()
-  };
+  // window.onload = function() {
+  //   getLocation()
+  // };
 
   function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(input, options);
